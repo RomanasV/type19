@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <form id="test-form">
+    <div class="form-control">
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" placeholder="Enter your age" max="100" min="0" step="1" value="20">
+    </div>
+
+    <div class="form-control">
+      <label for="name">Name:</label>
+      <input type="text" name="person-name" id="name" placeholder="Enter your name" maxlength="25" value="John">
+    </div>
+    
+    <div class="form-control">
+      <label for="birth-date">Birth date:</label>
+      <input type="date" name="birth-date" id="birth-date">
+    </div>
+
+    <div class="form-control">
+      <label for="favorite-color">Favorite color:</label>
+      <input type="color" name="color" id="favorite-color" value="#00ff00">
+    </div>
+
+    <fieldset>
+      <legend>Favorite programming languages:</legend>
+      
+      <div class="form-control">
+        <input type="checkbox" name="favorite-language" id="css" value="CSS">
+        <label for="css">CSS</label>
+      </div>
+      
+      <div class="form-control">
+        <input type="checkbox" name="favorite-language" id="html" value="HTML">
+        <label for="html">HTML</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>City</legend>
+      
+      <div class="form-control">
+        <input type="radio" name="city" id="vilnius" value="Vilnius">
+        <label for="vilnius">Vilnius</label>
+      </div>
+      
+      <div class="form-control">
+        <input type="radio" name="city" id="kaunas" value="Kaunas">
+        <label for="kaunas">Kaunas</label>
+      </div>
+    </fieldset>
+
+    <!-- <button type="submit">Submit</button> -->
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
