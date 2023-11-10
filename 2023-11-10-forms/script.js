@@ -22,13 +22,17 @@ function formSubmit(event) {
   const birthDate = form['birth-date'].value
   // const city = form.querySelector('[name="city"]:checked').value
   const city = form.city.value
-  const favoriteLanguages = form.querySelectorAll('[name="favorite-language"]:checked')
-
+  
   console.dir(age)
   console.dir(name)
   console.dir(color)
   console.dir(birthDate)
   console.dir(city)
+
+
+
+  
+  const favoriteLanguages = form.querySelectorAll('[name="favorite-language"]:checked')
   console.log(favoriteLanguages)
 
   let favoriteLanguagesText = 'Favorite languages: '
