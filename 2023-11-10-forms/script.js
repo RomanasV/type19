@@ -77,6 +77,13 @@ function studentFormSubmit(event) {
   const group = form.group.value
 
   console.log(name)
+
+  if (name.length === 0 || surname.length === 0) {
+    console.log('Forma uzpildyta neteisinga')
+
+    return
+  }
+
   console.log(surname)
   console.log(age)
   console.log(phone)
