@@ -1,6 +1,6 @@
 const testForm = document.querySelector('#test-form')
 
-testForm.addEventListener('submit', formSubmit)
+// testForm.addEventListener('submit', formSubmit)
 
 function formSubmit(event) {
   event.preventDefault()
@@ -46,4 +46,97 @@ function formSubmit(event) {
   }
 
   console.log(favoriteLanguagesText)
+}
+
+
+
+
+itKnowledgeHandler()
+
+const studentForm = document.querySelector('#student-form')
+studentForm.addEventListener('submit', studentFormSubmit)
+
+function studentFormSubmit(event) {
+  event.preventDefault()
+
+  // const name = document.querySelector('#name').value
+  // const name = studentForm.querySelector('#name').value
+  // const name = event.target.querySelector('#name').value
+
+  const form = event.target
+  console.dir(form.elements)
+  
+  // const name = form.querySelector('#name').value
+  // const name = form.elements.name.value
+  const name = form.name.value
+  const surname = form.surname.value
+  const age = form.age.value
+  const phone = form.phone.value
+  const email = form.email.value
+  const itKnowledge = form['it-knowledge'].value
+  const group = form.group.value
+
+  console.log(name)
+  console.log(surname)
+  console.log(age)
+  console.log(phone)
+  console.log(email)
+  console.log(itKnowledge)
+  console.log(group)
+
+  const interests = form.querySelectorAll('[name="interest"]:checked')
+
+  for (let i = 0; i < interests.length; i++) {
+    console.log(interests[i].value)
+  }
+
+  form.reset()
+  itKnowledgeHandler()
+
+  const studentsList = document.querySelector('#students-list')
+
+  studentsList.innerHTML = `<div class="student-item">
+                              <h2>${name} ${surname}</h2>
+                              <p>Age: ${age}</p>
+                              <p>Phone: ${phone}</p>
+                              <p>Email: ${email}</p>
+                              <p>IT Knowledge: ${itKnowledge}</p>
+                              <p>Group: ${group}</p>
+                              <p>Interests: ...</p>
+                            </div>
+                            ${studentsList.innerHTML}`
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function itKnowledgeHandler() {
+  const itKnowledge = document.querySelector('#it-knowledge')
+  const outputElement = document.querySelector('#it-knowledge-output')
+
+  outputElement.textContent = itKnowledge.value
+
+  itKnowledge.addEventListener('input', itKnowledgeChange)
+}
+
+function itKnowledgeChange(event) {
+  const inputValue = event.target.value
+
+  const outputElement = document.querySelector('#it-knowledge-output')
+  outputElement.textContent = inputValue
 }

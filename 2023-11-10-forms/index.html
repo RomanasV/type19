@@ -7,7 +7,116 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <form id="test-form">
+  <form id="student-form">
+    <!-- 1. Tekstinis laukelis vardui (privalomas). -->
+    <div class="form-control">
+      <label for="name">Name:</label>
+      <input type="text" name="student-name" id="name" required value="John">
+    </div>
+    
+    <!-- 2. Tekstinis laukelis pavardei (privalomas). -->
+    <div class="form-control">
+      <label for="surname">Surname:</label>
+      <input type="text" name="student-surname" id="surname" required value="Doe">
+    </div>
+    
+    <!-- 3. Skaičiaus laukelis amžiui (privalomas). -->
+    <div class="form-control">
+      <label for="age">Age:</label>
+      <input type="number" name="student-age" id="age" min="18" max="100" required value="25">
+    </div>
+    
+    <!-- 4. Laukelis įvesti telefono numerį (neprivalomas). -->
+    <div class="form-control">
+      <label for="phone">Phone:</label>
+      <input type="tel" name="student-phone" id="phone" value="+370545646546">
+    </div>
+
+    <!-- 5. Laukelis įvesti el. paštą (privalomas). -->
+    <div class="form-control">
+      <label for="email">Email:</label>
+      <input type="email" name="student-email" id="email" required value="john@doe.com">
+    </div>
+
+    <!-- 6. Range tipo laukelis, kuris skirtas įvertinti savo IT žinias nuo 1 iki 10. Galimas vertinimas tik sveikiems skaičiams. -->
+    <div class="form-control">
+      <label for="it-knowledge">IT Knowledge:</label>
+      <input type="range" name="student-it-knowledge" id="it-knowledge" step="1" min="1" max="10" value="5">
+      <span id="it-knowledge-output"></span>
+    </div>
+
+    <!-- 7. Radio tipo laukeliai, kuriuose pasirenkamas grupės numeris. Turi būti galimybė pasirinkti grupes nuo TYPE 15gr. iki TYPE 20gr. -->
+    <fieldset>
+      <legend>Group:</legend>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-15" value="TYPE 15" checked>
+        <label for="group-15">TYPE 15gr</label>
+      </div>
+      <div class="form-control">
+        <input type="radio" name="group" id="group-16" value="TYPE 16">
+        <label for="group-16">TYPE 16gr</label>
+      </div>
+      <div class="form-control">
+        <input type="radio" name="group" id="group-17" value="TYPE 17">
+        <label for="group-17">TYPE 17gr</label>
+      </div>
+      <div class="form-control">
+        <input type="radio" name="group" id="group-18" value="TYPE 18">
+        <label for="group-18">TYPE 18gr</label>
+      </div>
+      <div class="form-control">
+        <input type="radio" name="group" id="group-19" value="TYPE 19">
+        <label for="group-19">TYPE 19gr</label>
+      </div>
+      <div class="form-control">
+        <input type="radio" name="group" id="group-20" value="TYPE 20">
+        <label for="group-20">TYPE 20gr</label>
+      </div>
+    </fieldset>
+
+    <!-- 8. Checkbox tipo laukeliai, kuriuose galima pasirinkti dominančias programavimo kalbas (bent 4 skirtingi checkbox elementai). -->
+    <fieldset>
+      <legend>Interests:</legend>
+
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-1" value="JavaScript" checked>
+        <label for="interest-1">JavaScript</label>
+      </div>
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-2" value="Node.js">
+        <label for="interest-2">Node.js</label>
+      </div>
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-3" value="Python" checked>
+        <label for="interest-3">Python</label>
+      </div>
+      <div class="form-control">
+        <input type="checkbox" name="interest" id="interest-4" value="Java">
+        <label for="interest-4">Java</label>
+      </div>
+    </fieldset>
+
+
+
+    <input type="submit" value="Create Student">
+  </form>
+
+  <div id="students-list">
+
+    <!-- <div class="student-item">
+      <h2>John Doe</h2>
+      <p>Age: 20</p>
+      <p>Phone: +357845131</p>
+      <p>Email: john@info.com</p>
+      <p>Group: TYPE15</p>
+      <p>Interests: JavaScript, JAVA</p>
+    </div> -->
+  
+  </div>
+
+
+  <!-- <form id="test-form">
     <div class="form-control">
       <label for="age">Age:</label>
       <input type="number" name="age" id="age" placeholder="Enter your age" max="100" min="0" step="1" value="20">
@@ -56,8 +165,8 @@
       </div>
     </fieldset>
 
-    <!-- <button type="submit">Submit</button> -->
+    <button type="submit">Submit</button>
     <input type="submit" value="Submit">
-  </form>
+  </form> -->
 </body>
 </html>
