@@ -86,4 +86,17 @@ const attrValue = '_blank'
 
 link.setAttribute(attrName, attrValue)
 
-console.dir(link)
+
+// STILIUS
+link.style.border = '2px solid black'
+link.style.padding = '5px 10px'
+link.style.display = 'inline-block'
+link.style.fontSize = '25px'
+
+link.style = `color: red;
+              border: 2px solid black;
+              padding: 5px 10px;
+              display: inline-block;
+              font-size: 25px;
+              text-decoration: none;
+              text-transform: uppercase;`
