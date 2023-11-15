@@ -102,16 +102,22 @@ function studentFormSubmit(event) {
 
   const studentsList = document.querySelector('#students-list')
 
-  studentsList.innerHTML = `<div class="student-item">
-                              <h2>${name} ${surname}</h2>
-                              <p>Age: ${age}</p>
-                              <p>Phone: ${phone}</p>
-                              <p>Email: ${email}</p>
-                              <p>IT Knowledge: ${itKnowledge}</p>
-                              <p>Group: ${group}</p>
-                              <p>Interests: ...</p>
-                            </div>
-                            ${studentsList.innerHTML}`
+  const studentItem = document.createElement('div')
+  studentItem.classList.add('student-item')
+
+  studentsList.prepend(studentItem)
+
+  // studentsList.innerHTML = `<div class="student-item">
+  //                             <h2>${name} ${surname}</h2>
+  //                             <p>Age: ${age}</p>
+  //                             <p>Phone: ${phone}</p>
+  //                             <p>Email: ${email}</p>
+  //                             <p>IT Knowledge: ${itKnowledge}</p>
+  //                             <p>Group: ${group}</p>
+  //                             <p>Interests: ...</p>
+  //                             <button>Click</button>
+  //                           </div>
+  //                           ${studentsList.innerHTML}`
 }
 
 
