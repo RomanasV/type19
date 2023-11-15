@@ -48,9 +48,6 @@ function formSubmit(event) {
   console.log(favoriteLanguagesText)
 }
 
-
-
-
 itKnowledgeHandler()
 
 const studentForm = document.querySelector('#student-form')
@@ -64,8 +61,7 @@ function studentFormSubmit(event) {
   // const name = event.target.querySelector('#name').value
 
   const form = event.target
-  console.dir(form.elements)
-  
+
   // const name = form.querySelector('#name').value
   // const name = form.elements.name.value
   const name = form.name.value
@@ -76,20 +72,11 @@ function studentFormSubmit(event) {
   const itKnowledge = form['it-knowledge'].value
   const group = form.group.value
 
-  console.log(name)
-
   if (name.length === 0 || surname.length === 0) {
     console.log('Forma uzpildyta neteisinga')
 
     return
   }
-
-  console.log(surname)
-  console.log(age)
-  console.log(phone)
-  console.log(email)
-  console.log(itKnowledge)
-  console.log(group)
 
   const interests = form.querySelectorAll('[name="interest"]:checked')
 
@@ -101,7 +88,11 @@ function studentFormSubmit(event) {
   itKnowledgeHandler()
 
   const studentsList = document.querySelector('#students-list')
+  const studentItem = createStudentItem(name, surname, age, phone, email, itKnowledge, group)
+  studentsList.prepend(studentItem)
+}
 
+function createStudentItem(name, surname, age, phone, email, itKnowledge, group) {
   const studentItem = document.createElement('div')
   studentItem.classList.add('student-item')
 
@@ -134,26 +125,9 @@ function studentFormSubmit(event) {
   })
 
   studentItem.append(studentNameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsElement, deleteButton)
-  studentsList.prepend(studentItem)
+
+  return studentItem
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function itKnowledgeHandler() {
   const itKnowledge = document.querySelector('#it-knowledge')
