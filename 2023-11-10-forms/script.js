@@ -105,19 +105,36 @@ function studentFormSubmit(event) {
   const studentItem = document.createElement('div')
   studentItem.classList.add('student-item')
 
-  studentsList.prepend(studentItem)
+  const studentNameElement = document.createElement('h2')
+  studentNameElement.textContent = `${name} ${surname}`
 
-  // studentsList.innerHTML = `<div class="student-item">
-  //                             <h2>${name} ${surname}</h2>
-  //                             <p>Age: ${age}</p>
-  //                             <p>Phone: ${phone}</p>
-  //                             <p>Email: ${email}</p>
-  //                             <p>IT Knowledge: ${itKnowledge}</p>
-  //                             <p>Group: ${group}</p>
-  //                             <p>Interests: ...</p>
-  //                             <button>Click</button>
-  //                           </div>
-  //                           ${studentsList.innerHTML}`
+  const ageElement = document.createElement('p')
+  ageElement.textContent = `Age: ${age}`
+
+  const phoneElement = document.createElement('p')
+  phoneElement.textContent = `Phone: ${phone}`
+
+  const emailElement = document.createElement('p')
+  emailElement.textContent = `Email: ${email}`
+
+  const itKnowledgeElement = document.createElement('p')
+  itKnowledgeElement.textContent = `IT Knowledge: ${itKnowledge}`
+
+  const groupElement = document.createElement('p')
+  groupElement.textContent = `Group: ${group}`
+
+  const interestsElement = document.createElement('p')
+  interestsElement.textContent = `Interests: ...`
+
+  const deleteButton = document.createElement('button')
+  deleteButton.textContent = 'Delete student'
+
+  deleteButton.addEventListener('click', function() {
+    studentItem.remove()
+  })
+
+  studentItem.append(studentNameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsElement, deleteButton)
+  studentsList.prepend(studentItem)
 }
 
 
